@@ -1,5 +1,6 @@
 # Se implementa una una función masSimilar cuyo objetivo será encontrar el documento de un corpus de tm 
 # que sea más similar a una determinada consulta haciendo uso de la función dissimilarity
+# La función masSimilar tomará como entrada dos parámetros: La cadena de texto que representa la consulta, Un corpus de tm.
 dissimilarity <- function(x, y, method="cosine") {  
          corp <- Corpus(VectorSource(c(x)))
          corp <- c(corp, y)
