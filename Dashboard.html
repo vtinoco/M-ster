@@ -1,0 +1,360 @@
+<html>
+<head>
+<style>
+#header {
+    background-color:black;
+    color:Orange;
+    text-align:center;
+    padding:5px;
+	width: 1200px
+} 
+ 
+.center {
+    margin: auto;
+	align: center;
+    width: 69%;
+   
+}
+
+.center1 {
+    margin: auto;
+    align: center;
+   
+}
+
+ body {
+    background-color: #A4A4A4;
+} 
+ 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	background: black;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      
+     google.charts.load('current', {'packages': ['geochart', 'corechart', 'bar']});
+
+     google.charts.setOnLoadCallback(Basica);
+
+     // Se crean todos los PieCharts que van a interactuar con el BarChart
+     function MadridChart() {
+           var data = google.visualization.arrayToDataTable([
+           ['TipoAtaque', 'NumAtaque'],
+           ['Zombies', 1000],
+           ['Vampiros', 1170],
+           ['Godzilla', 660],
+           ['Extraterrestres', 1030]
+            ]);
+
+            var options = {
+                title: 'Ataques en Madrid',
+                vAxis: { title: 'Tipos de ataques', titleTextStyle: { color: 'orange' } },
+                backgroundColor: 'black',
+                pieHole: 0.4,  
+                titleTextStyle: {color: 'orange', bold: true, fontSize: 16}, 
+                legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}}
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('subchart_div'));
+            chart.draw(data, options);
+
+        }
+     function RomaChart() {
+           var data = google.visualization.arrayToDataTable([
+           ['TipoAtaque', 'NumAtaque'],
+           ['Zombies', 5000],
+           ['Vampiros', 3570],
+           ['Godzilla', 4000],
+           ['Extraterrestres', 7000]
+            ]);
+
+            var options = {
+                title: 'Ataques en Roma',
+                vAxis: { title: 'Tipos de ataques', titleTextStyle: { color: 'orange' } },
+                backgroundColor: 'black',
+                pieHole: 0.4,  
+                titleTextStyle: {color: 'orange', bold: true, fontSize: 16}, 
+                legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}}
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('subchart_div'));
+            chart.draw(data, options);
+
+        }
+      function ParisChart() {
+           var data = google.visualization.arrayToDataTable([
+           ['TipoAtaque', 'NumAtaque'],
+           ['Zombies', 3000],
+           ['Vampiros', 7000],
+           ['Godzilla', 4000],
+           ['Extraterrestres', 1000]
+            ]);
+
+            var options = {
+                title: 'Ataques en Paris',
+                vAxis: { title: 'Tipos de ataques', titleTextStyle: { color: 'orange' } },
+                backgroundColor: 'black',
+                pieHole: 0.4,  
+                titleTextStyle: {color: 'orange', bold: true, fontSize: 16}, 
+                legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}}                
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('subchart_div'));
+            chart.draw(data, options);
+
+        }
+      function BerlinChart() {
+           var data = google.visualization.arrayToDataTable([
+           ['TipoAtaque', 'NumAtaque'],
+           ['Zombies', 2000],
+           ['Vampiros', 1170],
+           ['Godzilla', 2600],
+           ['Extraterrestres', 1700]
+            ]);
+
+            var options = {
+                title: 'Ataques en Berlin',
+                vAxis: { title: 'Tipos de ataques', titleTextStyle: { color: 'orange' } },
+                backgroundColor: 'black',
+                pieHole: 0.4,  
+                titleTextStyle: {color: 'orange', bold: true, fontSize: 16}, 
+                legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}}               
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('subchart_div'));
+            chart.draw(data, options);
+
+        }
+      function LondonChart() {
+           var data = google.visualization.arrayToDataTable([
+           ['TipoAtaque', 'NumAtaque'],
+           ['Zombies', 2000],
+           ['Vampiros', 4170],
+           ['Godzilla', 1660],
+           ['Extraterrestres', 500]
+            ]);
+
+            var options = {
+                title: 'Ataques en London',
+                vAxis: { title: 'Tipos de ataques', titleTextStyle: { color: 'orange' } },
+                backgroundColor: 'black',
+                pieHole: 0.4,  
+                titleTextStyle: {color: 'orange', bold: true, fontSize: 16}, 
+                legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}}
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('subchart_div'));
+            chart.draw(data, options);
+
+        }
+     
+     // Esta función crea el barchart que dará pié a los PieChart 
+     function Basica() {
+
+         var data = google.visualization.arrayToDataTable([
+            ['Ciudades',   'Numero de ataques'],
+            ['Madrid',      20000],
+            ['Roma',     18000],
+            ['Paris',    15000],
+            ['Berlin',     13000],
+            ['London',   10000]
+          ], false);
+
+         var options = {
+            title: 'Personas atacadas por ciudades',
+            chartArea: {width: '50%'},
+            colors: ['red'],
+            backgroundColor: 'black',
+            legend: {position: 'rigth', textStyle: {color: 'orange', fontSize: 11}},
+            titleTextStyle: {color: 'orange', bold: true, fontSize: 16},           
+           chartArea: {backgroundColor: 'gray'},
+             textStyle: { color: 'orange'},
+            hAxis: {
+              title: 'Número de personas atacadas',
+               titleTextStyle: {color: 'orange', bold: true},
+               textStyle: {color: 'orange'}, 
+              minValue: 0
+            },
+            vAxis: {
+              title: 'Ciudades',
+              titleTextStyle: {color: 'orange', bold: true},
+              textStyle: {color: 'orange'}
+            }
+          };
+
+          var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
+			
+			
+			// Esta es la función que permite que se creen los PieChart
+          function selectorManual() {
+                    var ItemElegido = chart.getSelection()[0];
+                    if (ItemElegido) {
+                        var ciudades = data.getValue(ItemElegido.row, 0);
+                        alert('El general ha elegido ' + ciudades);
+                        if (ciudades == 'Madrid')
+                        {
+                            MadridChart();
+                        }
+                        if (ciudades == 'Roma') {
+                            RomaChart();
+                        }
+                        if (ciudades == 'Paris') {
+                            ParisChart();
+                        }
+                        if (ciudades == 'Berlin') {
+                            BerlinChart();
+                        }
+                        if (ciudades == 'London') {
+                            LondonChart();
+                        }
+                    }
+                }
+
+         google.visualization.events.addListener(chart, 'select', selectorManual);
+         chart.draw(data, options);
+    }
+    </script>
+    
+    <script type='text/javascript'>
+    
+	// En este nuevo script vamos a crear una filtro por búsqueda
+    google.load('visualization', '1',{packages: ['controls', 'corechart', 'table']});
+      
+    google.setOnLoadCallback(DashboardCentral); 
+     
+		//Creamos la función que conecta con loas otras visualizaciones
+     function DashboardCentral() {
+		control1 = CreadorMapa();
+		control2 = CreadorTabla();
+		
+		//Esta es la llamada que permite el filtro 
+		google.visualization.events.addListener(control1, 'statechange', function() {
+			control2.setState(control1.getState());
+			control2.draw();
+		});
+	  }  
+      
+	  //Esta función crea el mapa 
+      function CreadorMapa() {
+        var data = google.visualization.arrayToDataTable([
+           ['Ciudades',   'Numero de ataques'],
+          ['Madrid',      20000],
+          ['Roma',     18000],
+          ['Paris',    15000],
+          ['Berlin',     13000],
+          ['London',   10000]
+
+        ], false);
+
+        var geoChart = new google.visualization.ChartWrapper({
+            'chartType': 'GeoChart',
+            'containerId': 'chart1',
+            'options': {
+              'region': '150',
+              'displayMode': 'markers',
+              'backgroundColor': 'black',
+              'datalessRegionColor' : '#A4A4A4',
+              'legend': {'textStyle': {'color': 'red', 'bold': 'true'}},
+              'colorAxis': {'colors': ['red', 'darkred']},
+            }
+          });
+
+		//Aquí definimos el filtro que vamos a usar
+        var filtro = new google.visualization.ControlWrapper({
+            'controlType': 'StringFilter',
+            'containerId': 'control1',
+            'options': {
+              'filterColumnLabel': 'Ciudades'
+			  
+			  
+            }
+          });  
+        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'))
+            .bind(filtro, geoChart)
+            .draw(data);
+
+          return filtro
+    };
+      
+		//Creamos la tabla con todo los elementos
+	  function CreadorTabla() {
+        
+		 var data = google.visualization.arrayToDataTable([
+			['Ciudades',   'Numero de ataques', 'Zombies', 'Vampiros', 'Godzilla', 'Extraterrestres' ],
+			['Madrid',      20000, 1000, 1170, 660, 1030],
+			['Roma',     18000, 5000, 3570, 4000, 7000],
+			['Paris',    15000, 3000, 7000, 4000, 1000],
+			['Berlin',     13000, 2000, 1170, 2600, 1700],
+			['London',   10000, 2000, 4170, 1660, 1700]
+			], false);
+			
+		//También definimos el filtro para luego anularlo, pero que tenga esa actividad	
+		var filtro = new google.visualization.ControlWrapper({
+			  'controlType': 'StringFilter',
+			  'containerId': 'control2',
+			  'options': {
+				'filterColumnLabel': 'Ciudades'
+			  }
+			});      
+
+		var tabla = new google.visualization.ChartWrapper({
+			  'chartType': 'Table',
+			  'containerId': 'chart2',
+			  'options': {
+				'width': 600,
+				'height': 350
+			  }
+			});
+
+		var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'))
+			 .bind(filtro, tabla)
+			 .draw(data);
+
+		return filtro;
+      }      
+            
+    </script>
+  </head>
+  <body>
+	<div id="header", class="center1">
+		<h1>Cuadro de Mando del General</h1>
+	</div>
+    <div id="dashboard", class="center">
+      <table border-collapse: collapse; width: 100%;>
+		<tr>
+
+        <div id="control1" style="background-color: #f2f2f2;width: 150px; height: 60px; color: orange;text-align: center;"></div>
+        <div id="control2" style="display:none"></div>
+	
+        </tr>
+		<tr style='vertical-align: top'>
+          <td>
+            <div style="float: left;" id="chart1"></div>
+          </td>	  
+          <td>  
+            <div style="float: left;" id="chart2"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div  class="center">
+	<table>
+        <tr>
+          <td>
+           <div id="chart_div1" style="width: 560px; height: 250px;"></div>
+          </td>	  
+          <td>  
+            <div id="subchart_div" style="width: 596; height: 250;"></div>
+          </td>
+        </tr>
+      </table>
+    </div>	
+  </body>
+</html>
