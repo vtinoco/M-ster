@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="datamaps.esp.js"></script>
+<h2>Datamap España</h2>
+
+<div id="container1" style="position: relative; width: 700px; height: 450px;"></div>
+
+<script>
+	//Creamos una variable que nos permita cargar los datos almacenados y mostrar solo las etiquetas de data 
+	var ESdata= {
+	};
+	
+	//Cargamos el mapa Español, con las características que queremos
+	var map = new Datamap({
+		scope: 'esp',
+		element: document.getElementById('container1'),
+		setProjection: function (element) {
+		  var projection = d3.geo.mercator()
+			  .center([13, 40])
+			  .rotate([0, 0])
+			  .scale(1450)
+			  .translate([600, 150]);
+		  var path = d3.geo.path()
+			  .projection(projection);
+			  
+		  return {path: path, projection: projection};
+		},
+		
+		//Creamos un color por defecto para el mapa y creamos colores alternativo para su visualización 
+		fills: {
+		  defaultFill: '#f0af0a',
+		  "mas3Muertes": 'DarkRed',
+		  "2o3Muertes": 'FireBrick',
+		  "unaMuerte": 'Red',
+		  "sinMuertes": "LimeGreen"
+		  
+		},
+		
+		//Configuramos parte de la visualización geográfica y creamos etiquetas personalizadas
+		geographyConfig: {
+			borderWidth: 0.75,
+			borderColor: '#B45F04',
+			popupTemplate: function (geography, data) {
+				return '<div class="hoverinfo">' + geography.properties.name + '<HR>' +
+					'Contagios: ' + data.contagios + '</div>';
+			},
+		},
+		
+		//Introducimos datos para visualizar y modifiaciones en el mapa, usando el indice del mapa. 
+		data: {
+			'M': {fillKey: 'mas3Muertes',
+					"contagios": 20},
+			'B': {fillKey: 'mas3Muertes',
+					"contagios": 15},
+			'Se': {fillKey: '2o3Muertes',
+					"contagios": 8 },
+			'SS': {fillKey: '2o3Muertes',
+					"contagios": 8 },
+			'Za': {fillKey: 'unaMuerte',
+					"contagios": 10 },
+			'V': {fillKey: 'unaMuerte',
+					"contagios": 4 },
+			'Gr': {fillKey: 'unaMuerte',
+					"contagios": 3 },
+			'Co': {fillKey: 'sinMuertes',
+					"contagios": 2 },
+			'Hu': {fillKey: 'sinMuertes',
+					"contagios": 1 }
+		}
+	});
+	
+	map.labels({'customLabelText': ESdata});
+	
+</script>
+</body>
