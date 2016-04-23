@@ -1,4 +1,4 @@
-# Se implementa un código de una función que recibirá obligatoriamente como entrada tres argumentos: tabla: la tabla de datos 
+# Se implementa un código de una función que recibirá obligatoriamente como entrada tres argumentos: la tabla de datos 
 # con la que estamos trabajando, un nombre de marca de los recogidos en la tabla, otro nombre de marca de los recogidos en la tabla.
 # La función dibujará un diagrama de dispersión en el que se muestre la variable consumo en autopista y como variable Y y la potencia 
 # del motor en caballoscomo variable X para cada una de las dos marcas. 
