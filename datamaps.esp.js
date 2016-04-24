@@ -1,5 +1,5 @@
 
-<!--This code is MIT License of Mark DiMarco Copyright (c) 2012. It was modificated by Victor Tinoco, 2016 -->
+<!--This code is MIT License, Copyright (c) 2012 Mark DiMarco. It was modificated by Victor Tinoco, 2016 -->
 
 (function() {
   var svg;
